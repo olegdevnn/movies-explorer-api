@@ -20,7 +20,8 @@ const {
 describe('Тестируем работу api с несуществующим адресом', () => {
   it('GET "/error404" если не авторизован, должен возвращать корректный статус', () => agent
     .get('/error404')
-    .then(({ status }) => {
+    .then(({ status, body }) => {
+      console.log(body);
       expect(status).toBe(UNAUTHORIZED);
     }));
 

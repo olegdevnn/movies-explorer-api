@@ -5,9 +5,9 @@
   "description": "Дипломная работа - Каталог фильмов (NodeJS / Express / MongoDB / MongooseJS)",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
-    "test:detect": "jest --runInBand --detectOpenHandles",
-    "test:coverage": "jest --coverage",
+    "test": "cross-env NODE_ENV=test jest",
+    "test:detect": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage",
     "start": "node server.js",
     "dev": "cross-env NODE_ENV=development nodemon --inspect server.js",
     "lint": "eslint .",

@@ -22,7 +22,8 @@ const createUserSchema = Joi.object({
   password: passwordSchema
     .required()
     .custom(verifyPassword),
-  name: nameSchema,
+  name: nameSchema
+    .required(),
 })
   .with('email', 'password')
   .with('email', 'name');

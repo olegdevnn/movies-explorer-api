@@ -28,16 +28,16 @@ const {
   DB_HOST, options,
 } = server;
 
-// corsValidator блокирует PostMan в режиме разработки
-if (NODE_ENV === 'production') {
-  app.use(corsValidator);
-}
-
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: 'application/json' }));
 
 app.use(cookiesHandler);
+
+// TODO cors блокирует PostMan (отключить на сервере когда будет фронтенд)
+if (NODE_ENV === 'productionFrontend') {
+  app.use(corsValidator);
+}
 app.use(csrf);
 app.use(rateLimit);
 app.use(helmet());
