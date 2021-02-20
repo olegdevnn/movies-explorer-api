@@ -14,13 +14,12 @@ Api включает: Регистрацию, авторизацию, редак
 
 **Используемые технологии**
 
-* NodeJs, Express, MongoDb, Mongoose, Joi
-* Создан Api для работы с сайтом
+* NodeJs, Express
 * База данным MongoDb, Mongoose ODM
+* Celebrate / Joi для валидация входных данных
 * Защита проекта CSRF, XSS, Query Limit и другие
 * JWT авторизация, хранение токена в httpOnly, secure
-* Celebrate / Joi валидация входных данных
-* Применено async/await
+* Применено async/await, promise.all
   
 **Тесты Jest**
 
@@ -29,7 +28,7 @@ Api включает: Регистрацию, авторизацию, редак
 * Функций
 * Middlewares  
 * Ошибки
-* Api
+* Api (supertest)
 
 
 IP сервера: [84.201.168.85](https://84.201.168.85)
@@ -48,7 +47,7 @@ IP сервера: [84.201.168.85](https://84.201.168.85)
 * GET /users/me - возвращает информацию о пользователе (email и name)
 * PUT /users/me - обновляет информацию о пользователе (email и name)
 * GET /movies - возвращает все сохранённые пользователем фильмы
-* POST /movies - создаёт фильм с переданными в теле (country, director, duration, year, description, image, trailer, nameRU, nameEN и thumbnail)
+* POST /movies - создаёт фильм с переданными в теле (country, director, duration, year, description, image, movieId, trailer, nameRU, nameEN и thumbnail)
 * DELETE /movies/movieId - удаляет сохранённый фильм
 
 ### Запуск проекта

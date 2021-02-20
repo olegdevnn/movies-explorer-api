@@ -28,6 +28,8 @@ const {
   DB_HOST, options,
 } = server;
 
+app.use(requestLogger);
+
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: 'application/json' }));
@@ -47,7 +49,6 @@ mongoose.connect(DB_HOST, options, (err) => {
 });
 mongoose.set('debug', { shell: NODE_ENV === 'development' });
 
-app.use(requestLogger);
 app.use(routes);
 app.use(clientErrorHandler);
 app.use(errorLogger);

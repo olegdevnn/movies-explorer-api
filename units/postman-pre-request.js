@@ -19,7 +19,6 @@ pm.sendRequest(reqObject, (err, res, { cookies }) => {
   } else {
     try {
       const csrfToken = cookies.one('csrfToken').value;
-      console.log(`fetched token ${csrfToken}`);
       pm.request.headers.add({ key: 'csrfToken', value: csrfToken });
     } catch (e) {
       console.log(e);
