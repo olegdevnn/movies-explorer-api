@@ -11,6 +11,7 @@ const corsOptions = {
       callback(new MethodNotAllowedError());
     }
   },
+  credentials: true,
 };
 
 const corsValidator = cors(corsOptions);

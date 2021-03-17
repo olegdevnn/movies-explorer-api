@@ -34,7 +34,7 @@ const createMovie = async (req, res, next) => {
 
     const { user } = req;
 
-    if (await Movie.findOne({ movieId }).exec()) {
+    if (await Movie.findOne({ movieId, owner: user._id }).exec()) {
       return next(new MovieExistsError());
     }
 

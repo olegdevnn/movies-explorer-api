@@ -29,6 +29,7 @@ const nameSchema = string
   .label(userMessages.name)
   .min(name.minLength)
   .max(name.maxLength)
+  .regex(RegExp(/^[a-z- ]+$/i))
   .trim()
   .messages(joiMessages);
 

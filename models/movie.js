@@ -79,6 +79,8 @@ const movieSchema = new Schema({
   timestamps: true,
 });
 
+movieSchema.index({movieId: 1, owner: 1}, { unique: true });
+
 movieSchema.statics.config = modelMovieConfig;
 
 module.exports = mongoose.model('movie', movieSchema);

@@ -37,7 +37,7 @@ app.use(bodyParser.json({ type: 'application/json' }));
 app.use(cookiesHandler);
 
 // TODO cors блокирует PostMan (отключить на сервере когда будет фронтенд)
-if (NODE_ENV === 'productionFrontend') {
+if (NODE_ENV === 'production') {
   app.use(corsValidator);
 }
 app.use(csrf);
