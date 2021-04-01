@@ -12,7 +12,7 @@ const router = express.Router({ strict: true });
 router.use(authRouter);
 
 router.use(auth);
-router.use(crashTestRouter); // TODO отключить после запуска проекта
+router.use(crashTestRouter);
 router.use('/movies', moviesRouter);
 router.use('/users', usersRouter);
 router.use(notFoundErrorHandler);

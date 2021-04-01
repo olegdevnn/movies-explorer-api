@@ -1,4 +1,5 @@
 // Список допустимых сайтов, с которых можно обращаться по api
+// Без '/' в конце.
 const corsSettings = {
   whiteList: [
     'http://localhost',
